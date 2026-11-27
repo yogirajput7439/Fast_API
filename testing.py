@@ -10,3 +10,4 @@ print("Hashed:", hashed)
 
 print("Correct password:", verify_password("Rahul@123", hashed))
 print("Wrong password:", verify_password("WrongPassword", hashed))
+
