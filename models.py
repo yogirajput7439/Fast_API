@@ -1,13 +1,17 @@
-from sqlalchemy import Integer, String, Column
+
+from sqlalchemy import Column, Integer, String
 from database import Base
 
-class Student(Base):
-    
-    __tablename__ = "students"
 
-    id = Column(Integer, primary_key = True, index = True)
-    name = Column(String, nullable = False)
-    age = Column(Integer, nullable = False)
-    email = Column(String, unique = True, nullable = False)
-    course = Column(String, nullable = False)
+class User(Base):
+    __tablename__ = "users"
 
+    id = Column(Integer, primary_key=True, index=True)
+
+    name = Column(String(100), nullable=False)
+
+    email = Column(String(150), unique=True, index=True, nullable=False)
+
+    password = Column(String(255), nullable=False)
+
+    role = Column(String(20), default="job_seeker", nullable=False)
